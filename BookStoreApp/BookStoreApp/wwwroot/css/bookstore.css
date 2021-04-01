@@ -4,3 +4,64 @@
 .logo{
     width: 10vw;
 }
+
+html{
+    position: relative;
+    min-height: 100%;
+}
+
+.jumbotron{
+    background: none;
+}
+
+.custom-image{
+    width: 4vw!important;
+}
+
+.login-button{
+    padding: 7px 12px;
+    background-color: none;
+    border: 2px solid purple;
+    font-size: 0.9rem;
+}
+
+.register-button {
+    padding: 7px 12px;
+    background-color: none;
+    border: 2px solid purple;
+    font-size: 0.9rem;
+}
+
+.login-button:hover {
+    padding: 7px 12px;
+    background-color: purple;
+    color: white;
+    border: 2px solid purple;
+    font-size: 0.9rem;
+}
+
+
+
+.register-button:hover {
+    padding: 7px 12px;
+    background-color: purple;
+    color: white;
+    border: 2px solid purple;
+    font-size: 0.9rem;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    
+}
+
+main{
+    margin-bottom: 50px;
+}
+
+.footer{
+    margin-top: 20px!important;
+}
+

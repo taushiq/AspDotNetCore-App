@@ -27,11 +27,12 @@ namespace BookStoreApp.Repository
         {
             return new List<BookModel>()
             {
-                new BookModel(){Id = 1, Author = "Taushiq", Title="MVC"},
-                new BookModel(){Id = 2, Author = "Taushiq", Title="Angular"},
-                new BookModel(){Id = 3, Author = "Taushiq", Title="CSS"},
-                new BookModel(){Id = 4, Author = "Taushiq", Title="Python"},
-                new BookModel(){Id = 5, Author = "Taushiq", Title="Javascript"},
+                new BookModel(){Id = 1, Author = "Taushiq", Title="MVC", Description="This is a description for MVC Book!", Category="Programming", Language = "English", TotalPages= 163},
+                new BookModel(){Id = 2, Author = "Taushiq", Title="Angular", Description="This is a description for Angular Book!", Category="Frontend Frameworks", Language = "English", TotalPages= 100},
+                new BookModel(){Id = 3, Author = "Taushiq", Title="CSS", Description="This is a description for CSS Book!", Category="Frontend", Language = "English", TotalPages= 256},
+                new BookModel(){Id = 4, Author = "Taushiq", Title="Python", Description="This is a description for Python Book!", Category="Backend", Language = "English", TotalPages= 354},
+                new BookModel(){Id = 5, Author = "Taushiq", Title="Javascript", Description="This is a description for Javascript Book!", Category="Frontend", Language = "English", TotalPages= 567},
+                new BookModel(){Id = 6, Author = "Nitish", Title="Azure DevOps", Description="This is a description for Azure DevOps Book!", Category="DevOps", Language = "English", TotalPages= 547}
             };
         }
 
