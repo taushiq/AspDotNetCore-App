@@ -3,14 +3,21 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+
+    <environment include="Development">
+        <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
     <link href="~/lib/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    </environment>
+
     <link href="~/css/bookstore.css" rel="stylesheet">
     <title>@ViewData["Title"] | Book Store Application</title>
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-toggler navbar-light bg-light">
-            <img class="logo custom-image" src="~/images/logo.png" />
+            <img class="logo custom-image" asp-append-version="true" src="~/images/logo.png" />
             <a class="custom navbar-brand" href="/">Book Store</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -19,17 +26,22 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" asp-controller="Home" asp-action="Index">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/home/aboutus">About</a>
+                        <a class="nav-link" asp-controller="Home" asp-action="aboutus">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/home/contactus">Contact</a>
+                        <a class="nav-link" asp-controller="Home" asp-action="contactus">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/book/getallbooks">All Books</a>
+                        <a class="nav-link" asp-controller="Book" asp-action="getallbooks">All Books</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Book" asp-action="AddNewBook">Add new Book</a>
+                    </li>
+
 
                 </ul>
                 <ul class="navbar-nav">

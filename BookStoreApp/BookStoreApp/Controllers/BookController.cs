@@ -34,5 +34,10 @@ namespace BookStoreApp.Controllers
         {
             return _bookRepository.SearchBook(bookName, authorName);
         }
+
+        public ViewResult AddNewBook()
+        {
+            return View();
+        }
     }
 }

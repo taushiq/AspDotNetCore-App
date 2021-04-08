@@ -6332,19 +6332,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\hp\\.nuget\\packages\\": {}
+    "C:\\Users\\TAUSHIQAWAIS\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Tech\\Web Dev\\Single Architecture - MVC\\Dot Net Core\\Asp Dot Net Core\\Bookstore\\BookStoreApp\\BookStoreApp\\BookStoreApp.csproj",
+      "projectUniqueName": "C:\\Users\\TAUSHIQAWAIS\\Desktop\\Dot Net Core\\Projects\\BookStoreApp\\BookStoreApp\\BookStoreApp\\BookStoreApp.csproj",
       "projectName": "BookStoreApp",
-      "projectPath": "E:\\Tech\\Web Dev\\Single Architecture - MVC\\Dot Net Core\\Asp Dot Net Core\\Bookstore\\BookStoreApp\\BookStoreApp\\BookStoreApp.csproj",
-      "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-      "outputPath": "E:\\Tech\\Web Dev\\Single Architecture - MVC\\Dot Net Core\\Asp Dot Net Core\\Bookstore\\BookStoreApp\\BookStoreApp\\obj\\",
+      "projectPath": "C:\\Users\\TAUSHIQAWAIS\\Desktop\\Dot Net Core\\Projects\\BookStoreApp\\BookStoreApp\\BookStoreApp\\BookStoreApp.csproj",
+      "packagesPath": "C:\\Users\\TAUSHIQAWAIS\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\TAUSHIQAWAIS\\Desktop\\Dot Net Core\\Projects\\BookStoreApp\\BookStoreApp\\BookStoreApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\TAUSHIQAWAIS\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6397,7 +6397,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }
