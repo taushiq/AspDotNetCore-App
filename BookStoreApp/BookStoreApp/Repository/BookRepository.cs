@@ -2,12 +2,38 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BookStoreApp.Data;
 using BookStoreApp.Models;
 
 namespace BookStoreApp.Repository
 {
     public class BookRepository
     {
+
+        private readonly BookStoreContext _context = null;
+
+        public BookRepository(BookStoreContext context)
+        {
+            _context = context;
+        }
+        public int AddNewBook(BookModel book)
+        {
+            var newBook = new Books()
+            {
+                Author = book.Author,
+                CreatedOn = DateTime.UtcNow,
+                Description = book.Description,
+                Title = book.Title,
+                TotalPages = book.TotalPages,
+                UpdatedOn = DateTime.UtcNow
+            };
+
+            _context.Books.Add(newBook);
+            _context.SaveChanges();
+
+            return newBook.Id;
+        }
+
         public List<BookModel> GetAllBooks()
         {
             return DataSource();
