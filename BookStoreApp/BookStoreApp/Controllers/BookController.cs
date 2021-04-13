@@ -5,16 +5,19 @@ using System.Threading.Tasks;
 using BookStoreApp.Models;
 using BookStoreApp.Repository;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BookStoreApp.Controllers
 {
     public class BookController : Controller
     {
         private readonly BookRepository _bookRepository = null;
+        private readonly LanguageRepository _languageRepository = null;
 
-        public BookController(BookRepository bookRepository)
+        public BookController(BookRepository bookRepository, LanguageRepository languageRepository)
         {
             _bookRepository = bookRepository;
+            _languageRepository = languageRepository;
         }
 
         public async Task<ViewResult> GetAllBooks()
@@ -35,11 +38,18 @@ namespace BookStoreApp.Controllers
             return _bookRepository.SearchBook(bookName, authorName);
         }
 
-        public ViewResult AddNewBook(bool isSuccess = false, int bookId = 0)
+        public async Task<ViewResult> AddNewBook(bool isSuccess = false, int bookId = 0)
         {
+            var model = new BookModel()
+            {
+                //LanguageId = 2
+            };
+
+            ViewBag.Languages = new SelectList(await _languageRepository.GetLanguages(), "Id", "Name");
+
             ViewBag.isSuccess = isSuccess;
             ViewBag.bookId = bookId;
-            return View();
+            return View(model);
         }
 
         [HttpPost]
@@ -54,10 +64,14 @@ namespace BookStoreApp.Controllers
                 }
             }
 
+            ViewBag.languages = new SelectList(await _languageRepository.GetLanguages(), "Id", "Name");
+
             ViewBag.isSuccess = false;
             ViewBag.bookId = 0;
 
             return View();
         }
+
+       
     }
 }
