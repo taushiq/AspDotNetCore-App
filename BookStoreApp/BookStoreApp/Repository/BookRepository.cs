@@ -27,8 +27,22 @@ namespace BookStoreApp.Repository
                 Title = book.Title,
                 LanguageId = book.LanguageId,
                 TotalPages = book.TotalPages.HasValue ? book.TotalPages.Value : 0,
-                UpdatedOn = DateTime.UtcNow
+                UpdatedOn = DateTime.UtcNow,
+                CoverImageUrl = book.CoverImageUrl,
+                BookPdfUrl = book.BookPdfUrl
+                
             };
+
+            newBook.BookGallery = new List<BookGallery>();
+
+            foreach (var file in book.Gallery)
+            {
+                newBook.BookGallery.Add(new BookGallery()
+                {
+                    Name = file.Name,
+                    Url = file.Url
+                });
+            }
 
            await _context.Books.AddAsync(newBook);
            await _context.SaveChangesAsync();
@@ -55,6 +69,7 @@ namespace BookStoreApp.Repository
                             Description = book.Description,
                             Id = book.Id,
                             LanguageId = book.LanguageId,
+                            CoverImageUrl = book.CoverImageUrl
                             //Language = book.Language.Name
                         }
                         ) ;
@@ -78,10 +93,15 @@ namespace BookStoreApp.Repository
                     Description = book.Description,
                     Id = book.Id,
                     LanguageId = book.LanguageId,
-                    Language = book.Language.Name
-                }
-                
-                ).FirstOrDefaultAsync();
+                    Language = book.Language.Name,
+                    CoverImageUrl = book.CoverImageUrl,
+                    Gallery = book.BookGallery.Select(g => new GalleryModel() {
+                        id = g.Id,
+                        Name = g.Name,
+                        Url = g.Url
+                    }).ToList(),
+                    BookPdfUrl = book.BookPdfUrl
+                }).FirstOrDefaultAsync();
 
             
           

@@ -15,7 +15,14 @@
     }
 
 
-<form method="post" asp-action="AddNewBook" asp-controller="Book">
+<div class="d-flex justify-content-center">
+    <div class="spinner-border" id="myLoader" style="display: none" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+
+<form method="post" enctype="multipart/form-data" data-ajax="true" data-ajax-complete="myComplete" data-ajax-success="mySuccess"
+      data-ajax-failure="myFailure" data-ajax-loading="#myLoader" asp-action="AddNewBook" asp-controller="Book">
 
     <div class="form-group">
         <label asp-for="LanguageId"></label>
@@ -51,9 +58,51 @@
     </div>
 
     <div class="form-group">
+        <label asp-for="CoverPhoto"></label>
+        <div class="custom-file">
+            <input asp-for="CoverPhoto" class="custom-file-input" id="customFile">
+            <label class="custom-file-label" asp-for="CoverPhoto">Choose file</label>
+        </div>
+        <span asp-validation-for="CoverPhoto" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="GalleryPhotos"></label>
+        <div class="custom-file">
+            <input asp-for="GalleryPhotos" class="custom-file-input" id="customFile">
+            <label class="custom-file-label" asp-for="GalleryPhotos">Choose files</label>
+        </div>
+        <span asp-validation-for="GalleryPhotos" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="BookPdf"></label>
+        <div class="custom-file">
+            <input asp-for="BookPdf" class="custom-file-input" id="customFile">
+            <label class="custom-file-label" asp-for="BookPdf">Choose file</label>
+        </div>
+        <span asp-validation-for="BookPdf" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
         <input type="submit" class="btn btn-primary" value="Add Book" />
     </div>
 </form>
 </div>
+
+
+@section scripts {
+    <script>
+        function myComplete(data) {
+            //alert('I am from Complete');
+        }
+        function mySuccess(data) {
+           // alert('I am from Success');
+        }
+        function myFailure(data) {
+            //alert('I am from Failure');
+        }
+    </script>
+}
 
 

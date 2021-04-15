@@ -15,6 +15,10 @@ namespace BookStoreApp.Data
 
         public string Category { get; set; }
 
+        public string CoverImageUrl { get; set; }
+
+        public string BookPdfUrl { get; set; }
+
         public int LanguageId { get; set; }
 
         public int TotalPages { get; set; }
@@ -23,6 +27,8 @@ namespace BookStoreApp.Data
         public DateTime? UpdatedOn { get; set; }
 
         public Language Language { get; set; }
+
+        public ICollection<BookGallery> BookGallery { get; set; }
     }
 
 }
